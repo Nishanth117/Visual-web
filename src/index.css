@@ -1,0 +1,185 @@
+/* Font styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Light editor skin for the Tailwind utility-heavy builder shell. */
+html {
+  color-scheme: light;
+}
+
+html:not(.dark-theme) [class~="bg-slate-950"],
+html:not(.dark-theme) [class~="bg-slate-950/20"],
+html:not(.dark-theme) [class~="bg-slate-950/40"],
+html:not(.dark-theme) [class~="bg-slate-950/80"],
+html:not(.dark-theme) [class~="bg-slate-900"],
+html:not(.dark-theme) [class~="bg-slate-900/40"],
+html:not(.dark-theme) [class~="bg-slate-900/50"],
+html:not(.dark-theme) [class~="bg-slate-900/60"],
+html:not(.dark-theme) [class~="bg-slate-850"],
+html:not(.dark-theme) [class~="bg-slate-905"] {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark-theme) [class~="bg-slate-800"],
+html:not(.dark-theme) [class~="bg-slate-800/40"],
+html:not(.dark-theme) [class~="bg-slate-800/60"],
+html:not(.dark-theme) [class~="bg-slate-850/50"] {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark-theme) [class~="bg-sky-950/20"],
+html:not(.dark-theme) [class~="bg-sky-950/60"],
+html:not(.dark-theme) [class~="bg-sky-500/10"] {
+  background-color: #e0f2fe !important;
+}
+
+html:not(.dark-theme) [class~="bg-amber-950/50"] {
+  background-color: #fffbeb !important;
+}
+
+html:not(.dark-theme) [class~="text-slate-100"],
+html:not(.dark-theme) [class~="text-slate-200"],
+html:not(.dark-theme) [class~="text-slate-300"],
+html:not(.dark-theme) [class~="text-slate-350"] {
+  color: #0f172a !important;
+}
+
+html:not(.dark-theme) [class~="text-slate-400"],
+html:not(.dark-theme) [class~="text-slate-450"],
+html:not(.dark-theme) [class~="text-slate-500"] {
+  color: #475569 !important;
+}
+
+html:not(.dark-theme) [class~="text-slate-600"],
+html:not(.dark-theme) [class~="text-slate-650"],
+html:not(.dark-theme) [class~="text-slate-700"] {
+  color: #64748b !important;
+}
+
+html:not(.dark-theme) [class~="border-slate-750"],
+html:not(.dark-theme) [class~="border-slate-800"],
+html:not(.dark-theme) [class~="border-slate-850"],
+html:not(.dark-theme) [class~="border-slate-850/50"] {
+  border-color: #dbe3ee !important;
+}
+
+html:not(.dark-theme) [class~="hover:bg-slate-800"]:hover,
+html:not(.dark-theme) [class~="hover:bg-slate-800/40"]:hover,
+html:not(.dark-theme) [class~="hover:bg-slate-850"]:hover,
+html:not(.dark-theme) [class~="hover:bg-slate-900"]:hover,
+html:not(.dark-theme) [class~="hover:bg-slate-900/50"]:hover {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark-theme) [class~="hover:text-slate-100"]:hover,
+html:not(.dark-theme) [class~="hover:text-slate-200"]:hover,
+html:not(.dark-theme) [class~="hover:text-slate-300"]:hover {
+  color: #0f172a !important;
+}
+
+html:not(.dark-theme) input,
+html:not(.dark-theme) textarea,
+html:not(.dark-theme) select {
+  color: #0f172a;
+}
+
+/* Canvas Drop Indicator Styles */
+.drop-indicator-line {
+  position: absolute;
+  height: 4px;
+  background-color: #3b82f6;
+  border-radius: 2px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 50;
+  transition: all 0.1s ease;
+}
+
+/* Visual Canvas Frame Overrides */
+.canvas-element-selected {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: -1px;
+}
+
+.canvas-element-hovered:not(.canvas-element-selected) {
+  outline: 1px dashed #60a5fa !important;
+  outline-offset: -1px;
+}
+
+.visual-resize-box {
+  position: absolute;
+  border: 1px solid #0ea5e9;
+  pointer-events: none;
+  z-index: 70;
+}
+
+.visual-resize-handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #0ea5e9;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.35);
+  pointer-events: auto;
+}
+
+.visual-resize-handle-e {
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+}
+
+.visual-resize-handle-s {
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+
+.visual-resize-handle-se {
+  right: -6px;
+  bottom: -6px;
+  cursor: nwse-resize;
+}
+
+[contenteditable="true"] {
+  cursor: text;
+  outline: 2px solid #22c55e !important;
+  outline-offset: 2px;
+}
+
+/* Hide control panels in preview mode */
+.preview-mode .editor-panel {
+  display: none !important;
+}
